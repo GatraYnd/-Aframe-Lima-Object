@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>VR: A-Frame Primitives</title>
+    <script src="./library/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <a-box  color="green" width="1" height="1" depth="1"
+                position="2 0.8 -5"
+                rotation="45 45 45"
+                scale="1 1 1"
+                src="#texture">
+                <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
+                <a-event name="mouseenter" scale="1 1 1"></a-event>
+        </a-box>
+
+        <a-sphere color="purple" position="2 0.8 -1.3" radius="0.8">
+                <a-animation attribute="color" from="purple" to="black" begin="click" repeat="indefinite"></a-animation>
+                <a-event name="mouseenter" scale="1 1 1"></a-event>
+        </a-sphere>
+
+        <a-cylinder color="blue" position="-1.7 1.5 -1.3" radius="0.5" >
+                <a-animation attribute="height" from="1.5" to="3" begin="click" repeat="indefinite"></a-animation>
+                <a-event name="mouseenter" scale="1 1 1"></a-event>
+        </a-cylinder>
+
+        <a-dodecahedron position="-1.7 0.8 -5" height="1" color="#FFF000">
+                <a-animation attribute="radius" from="0.5" to="1" begin="click" repeat="indefinite"></a-animation>
+                <a-event name="mouseenter" scale="1 1 1"></a-event>
+        </a-dodecahedron>
+                
+        <a-torus-knot position="0 1 -3" radius="0.3" height="1.5" color="#FF0000">
+                <a-animation attribute="position" from="0 1 -3" to="0 6 -3" begin="click" repeat="indefinite"></a-animation>
+                <a-event name="mouseenter" scale="1 1 1"></a-event>
+        </a-torus-knot>
+        
+
+        <a-plane position="0 0 -3" rotation="-90 0 0" width="5" height="5" color="white">
+            <a-text value="Gatra Yolanda" color="#111" align="center"></a-text>
+        </a-plane>
+        <a-sky src="https://cdn.glitch.com/b870d9ec-1139-44f9-b462-223e4a2c74e7%2Fsechelt.jpg?1490307995926" radius="30">
+        </a-sky>
+
+        <a-camera position="1 2 1">
+            <a-cursor color="#FF0000">
+        </a-camera>
+
+
+        <script>
+            var box = document.querySelector( 'a-box' );
+            box.addEventListener( 'mouseenter', function ( )
+            {
+                box.setAttribute( 'scale',
+                {
+                    x: 1,
+                    y: 1,
+                    z: 1
+                } );
+            } );
+        </script>
+
+    </a-scene>
+</body>
+</html>
